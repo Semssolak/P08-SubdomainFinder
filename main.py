@@ -29,12 +29,12 @@ def website_finder():
 def on_entry_click(event):
     if my_site_entry.get() == "e.g. google.com":
         my_site_entry.delete(0, END)
-        my_site_entry.config(fg='black')  # Yazı rengini değiştirmek isterseniz
+        my_site_entry.config(fg='black')  
 
 def on_entry_leave(event):
     if my_site_entry.get() == "":
         my_site_entry.insert(0, "e.g. google.com")
-        my_site_entry.config(fg='grey')  # Yazı rengini değiştirmek isterseniz
+        my_site_entry.config(fg='grey') 
 
 
 
@@ -73,8 +73,8 @@ my_site_entry = Entry(width=25)
 my_site_entry.grid(row=2, column=1)
 my_site_entry.config(background="#E6E9ED")
 my_site_entry.insert(0, "e.g. google.com")
-my_site_entry.bind('<FocusIn>', on_entry_click)  # Giriş alanına tıklandığında
-my_site_entry.bind('<FocusOut>', on_entry_leave)  # Giriş alanından çıkıldığında
+my_site_entry.bind('<FocusIn>', on_entry_click) 
+my_site_entry.bind('<FocusOut>', on_entry_leave)  
 
 find_button = Button(text="Find",command=website_finder)
 find_button.grid(row=3, column=0, columnspan=2)
@@ -84,7 +84,7 @@ status_label = Label(text="")
 status_label.grid(row=4, column=0, columnspan=2)
 status_label.config(background="#4FC1E9",fg="red")
 
-my_url_label = Label(text="", fg="red", cursor="hand2")  # "cursor" ile fareyi el işareti yaparız
+my_url_label = Label(text="", fg="red", cursor="hand2") 
 my_url_label.grid(row=5, column=0, columnspan=2)
 my_url_label.config(background="#4FC1E9")
 
@@ -93,7 +93,7 @@ def open_url(event):
         import webbrowser
         webbrowser.open(url)
 
-my_url_label.bind("<Button-1>", open_url)  # <Button-1> sol fare tıklamasını temsil eder
+my_url_label.bind("<Button-1>", open_url)  
 
 
 my_window.mainloop()
